@@ -3,11 +3,12 @@ package core.basesyntax.impl;
 import core.basesyntax.Storage;
 
 public class StorageImpl<K, V> implements Storage<K, V> {
+
+    private static final int CAPACITY = 10;
+
     private K[] keys;
     private V[] values;
     private int size;
-    private static final int CAPACITY = 10;
-
 
     @SuppressWarnings("unchecked")
     public StorageImpl() {
@@ -25,7 +26,6 @@ public class StorageImpl<K, V> implements Storage<K, V> {
         return -1;
     }
 
-
     @Override
     public void put(K key, V value) {
         int index = getKeyIndex(key);
@@ -33,7 +33,6 @@ public class StorageImpl<K, V> implements Storage<K, V> {
             values[index] = value;
             return;
         }
-
         keys[size] = key;
         values[size] = value;
         size++;
