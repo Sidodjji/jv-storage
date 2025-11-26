@@ -5,7 +5,7 @@ import core.basesyntax.Storage;
 public class StorageImpl<K, V> implements Storage<K, V> {
     private K[] keys;
     private V[] values;
-    int size;
+    private int size;
 
     @SuppressWarnings("unchecked")
     public StorageImpl() {
