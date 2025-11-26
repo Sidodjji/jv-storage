@@ -9,9 +9,10 @@ public class StorageImpl<K, V> implements Storage<K, V> {
     private static final int CAPACITY = 10;
 
 
+    @SuppressWarnings("unchecked")
     public StorageImpl() {
-        this.keys = new K[CAPACITY];
-        this.values = new V[CAPACITY];
+        this.keys = (K[]) new Object[CAPACITY];
+        this.values = (V[]) new Object[CAPACITY];
         this.size = 0;
     }
 
